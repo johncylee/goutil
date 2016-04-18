@@ -23,8 +23,8 @@ Error:
 	return fmt.Errorf("Malformed MAC: %s", s)
 }
 
-func (t *MAC) MarshalJSON() (b []byte, err error) {
-	return []byte(`"` + net.HardwareAddr(*t).String() + `"`), nil
+func (t MAC) MarshalJSON() (b []byte, err error) {
+	return []byte(`"` + net.HardwareAddr(t).String() + `"`), nil
 }
 
 func (t *MAC) String() string {
