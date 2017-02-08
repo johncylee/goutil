@@ -12,3 +12,13 @@ func IsJSONString(data []byte) bool {
 	}
 	return true
 }
+
+// Simple pretty print in JSON format
+func PrettyPrint(v interface{}) (s string) {
+	b, err := json.MarshalIndent(v, "", "  ")
+	if err != nil {
+		return
+	}
+	s = string(b)
+	return
+}
